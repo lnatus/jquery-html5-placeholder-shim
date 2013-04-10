@@ -30,6 +30,13 @@
           width: $(target).width()
         };
       }
+      function adjustToResizing(label) {
+      	var $target = label.data('target');
+      	if(typeof $target !== "undefined") {
+          label.css(calcPositionCss($target));
+          $(window).one("resize", function () { adjustToResizing(label); });
+        }
+      }
       return this.each(function() {
         var $this = $(this);
 
@@ -83,11 +90,7 @@
             }).blur(function() {
               ol[$this.val().length ? 'hide' : 'show']();
             }).triggerHandler('blur');
-          $(window)
-            .resize(function() {
-              var $target = ol.data('target');
-              ol.css(calcPositionCss($target));
-            });
+          $(window).one("resize", function () { adjustToResizing(ol); });
         }
       });
     }
