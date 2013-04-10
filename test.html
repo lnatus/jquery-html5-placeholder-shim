@@ -67,6 +67,7 @@ $(function(){
 		<h2>Basic Examples</h2>
 		<a href="#" onclick="$('#cont').toggle();return false;">hide form</a>
 		<a href="#" onclick="$('#medium').toggle();$.placeholder.shim();return false;">hide medium row</a>
+		<a href="#" id="remove" onclick="this.onclick='';$('#large').remove();window.resizeTo($(window).width(), $(window).height());$.placeholder.shim();return false;">remove large row and resize window</a>
 		<div id="cont" >
 			<div>
 				<label>small</label>
@@ -78,7 +79,7 @@ $(function(){
 				<input type="text" placeholder="placeholder" class="medium" />
 				<input type="text" placeholder="placeholder" value="value" class="medium" />
 			</div>
-			<div>	
+			<div id="large">	
 				<label>large</label>
 				<input type="text" placeholder="placeholder" class="large" />
 				<input type="text" placeholder="placeholder" value="value" class="large" />
