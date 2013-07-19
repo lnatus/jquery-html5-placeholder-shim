@@ -8,7 +8,7 @@ Just include the `jquery.html-placeholder-shim.js` script into your document hea
 ```html
 <head>
   <script type='text/javascript' src='jquery.js'></script>
-  <script type='text/javascript' src='jquery/html5-placeholder-shim.js'></script>
+  <script type='text/javascript' src='jquery.html5-placeholder-shim.js'></script>
 </head>
 ```
 The script will automatically execute itself on the `$(document).ready` event and can be re-executed at any time (for example, to add placeholders to text boxes created during dynamic changes to the page) by running `$.placeholder.shim();`.
