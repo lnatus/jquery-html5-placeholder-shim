@@ -53,6 +53,8 @@
             possible_line_height = { lineHeight: $this.css('height'), whiteSpace: 'nowrap' };
           }
 
+          var isBorderBox = ($this.css('box-sizing') === 'border-box');
+
           var ol = $('<label />')
             .text($this.attr('placeholder'))
             .addClass(config.cls)
@@ -64,9 +66,9 @@
               textAlign: 'left',
               color: config.color,
               cursor: 'text',
-              paddingTop: $this.css('padding-top'),
+              paddingTop: isBorderBox ? '0' : $this.css('padding-top'),
               paddingRight: $this.css('padding-right'),
-              paddingBottom: $this.css('padding-bottom'),
+              paddingBottom: isBorderBox ? '0' : $this.css('padding-bottom'),
               paddingLeft: $this.css('padding-left'),
               fontSize: $this.css('font-size'),
               fontFamily: $this.css('font-family'),
