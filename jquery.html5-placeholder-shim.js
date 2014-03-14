@@ -82,7 +82,9 @@
             .attr('for', this.id)
             .data('target',$this)
             .click(function(){
-              $(this).data('target').focus();
+                if (!$(this).data('target').is(':disabled')) {
+                    $(this).data('target').focus();
+                }
             })
             .insertBefore(this);
           $this
